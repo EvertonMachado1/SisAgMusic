@@ -1,0 +1,13 @@
+# Pasta do ambiente virtual
+venv/
+
+# Arquivos do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Banco de dados SQLite
+db.sqlite3
+
+# Configurações Sensíveis
+.env
