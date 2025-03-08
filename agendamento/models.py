@@ -3,6 +3,7 @@ from django.contrib.auth.models import User  # Importa o modelo de usuário padr
 
 
 class Instrumento(models.Model):
+    id= models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
 
     def __str__(self):
@@ -10,6 +11,7 @@ class Instrumento(models.Model):
 
 
 class Professor(models.Model):
+    id= models.AutoField(primary_key=True)
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)  # Relacionamento 1:1 com User
     instrumentos = models.ManyToManyField(Instrumento)
 
@@ -18,6 +20,7 @@ class Professor(models.Model):
 
 
 class Aluno(models.Model):
+    matricula = models.AutoField(primary_key=True) 
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)  # Relacionamento 1:1 com User
     instrumento_interesse = models.ForeignKey(Instrumento, on_delete=models.SET_NULL, null=True, blank=True)
     telefone = models.CharField(max_length=20, blank=True, null=True)
